@@ -44,6 +44,7 @@ input:focus,textarea:focus{outline:2px solid var(--gold);outline-offset:1px}
 <div class="est">EST. 2025</div>
 </header>
 <div class="notice"><b>Pick-up only.</b> Walang delivery. Pakipili ang petsa at oras ng pick-up.</div>
+<div class="notice" style="margin-top:10px">📍 <b>Pick-up Address:</b> <span id="addr"></span></div>
 
 <form id="f" novalidate>
 <section>
@@ -75,11 +76,21 @@ input:focus,textarea:focus{outline:2px solid var(--gold);outline-offset:1px}
 </div>
 
 <script>
-// EDIT MENU HERE: [name, price]
+// ============ SETTINGS (pwedeng i-edit) ============
+// Address ng pick-up (lalabas sa taas ng form):
+var PICKUP_ADDRESS="1234 SCT Laging Handa, Quezon City";
+// FormSubmit ID: ngayon ay email mo. Kapag nakuha mo na ang random code
+// mula sa FormSubmit, ipalit mo dito (halimbawa "a1b2c3d4e5...").
+var FORMSUBMIT_ID="maisondejoie0216@gmail.com";
+document.getElementById("addr").textContent=PICKUP_ADDRESS;
+// ============ EDIT MENU HERE ============
+// Format: ["Pangalan ng item", presyo],  (may kuwit sa dulo ng bawat linya)
+// Para magdagdag: kopyahin ang isang linya. Para magtanggal: burahin ang linya.
 var MENU={
  breads:[["Pandesal (6 pcs)",40],["Ensaymada",35],["Loaf Bread",120],["Cheese Bread",30]],
  pastries:[["Croissant",85],["Chocolate Chip Cookie",45],["Brownie",60],["Cinnamon Roll",75]]
 };
+// ========================================
 var EMAIL="maisondejoie0216@gmail.com",rows=[];
 function build(id,list){
  var c=document.getElementById(id);
@@ -111,12 +122,29 @@ document.getElementById("f").addEventListener("submit",function(e){
  if(!lines.length){m.className="msg err";m.textContent="Pumili po ng kahit isang item.";return}
  lastText="NEW ORDER – PICK-UP\n\nName: "+g("name")+"\nMobile: "+g("phone")+"\nEmail: "+(g("email")||"-")+
   "\nPick-up: "+g("date")+" at "+g("time")+"\n\nORDER:\n"+lines.join("\n")+"\n\nEstimated Total: ₱"+calc()+"\nNotes: "+(g("notes")||"-");
- var url="mailto:"+EMAIL+"?subject="+encodeURIComponent("Order from "+g("name")+" – Pick-up "+g("date"))+"&body="+encodeURIComponent(lastText);
- m.innerHTML='Bubuksan ang email app mo — pindutin ang <b>Send</b> para makumpleto ang order. Hindi bumukas? <button type="button" class="copy" id="cp">Kopyahin ang order</button> at i-email sa '+EMAIL+'.';
- document.getElementById("cp").onclick=function(){
-  try{navigator.clipboard.writeText(lastText);this.textContent="Nakopya!"}catch(x){window.prompt("Copy:",lastText)}
+ var subject="Order from "+g("name")+" – Pick-up "+g("date");
+ var btn=document.querySelector(".submit");btn.disabled=true;btn.textContent="SENDING...";
+ var fallback=function(){
+  btn.disabled=false;btn.textContent="SUBMIT ORDER";
+  var url="mailto:"+EMAIL+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(lastText);
+  m.innerHTML='Hindi automatic na naipadala. Bubuksan ang email app mo — pindutin ang <b>Send</b>. Hindi bumukas? <button type="button" class="copy" id="cp">Kopyahin ang order</button> at i-email sa '+EMAIL+'.';
+  document.getElementById("cp").onclick=function(){
+   try{navigator.clipboard.writeText(lastText);this.textContent="Nakopya!"}catch(x){window.prompt("Copy:",lastText)}
+  };
+  window.location.href=url;
  };
- window.location.href=url;
+ var data={_subject:subject,_template:"table",_captcha:"false",_honey:"",
+  Name:g("name"),Mobile:g("phone"),"Pick-up":g("date")+" at "+g("time"),
+  Order:lines.join("\n"),Total:"₱"+calc(),Notes:g("notes")||"-"};
+ if(g("email"))data.email=g("email");
+ fetch("https://formsubmit.co/ajax/"+FORMSUBMIT_ID,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(data)})
+ .then(function(r){return r.json()})
+ .then(function(d){
+  if(d.success!=="true"&&d.success!==true)throw 0;
+  btn.disabled=false;btn.textContent="SUBMIT ORDER";
+  m.className="msg";m.innerHTML="<b style='color:var(--gold)'>Salamat!</b> Natanggap na namin ang order mo. Hintayin ang confirmation mula sa Maison de Joie.";
+  document.getElementById("f").reset();rows.forEach(function(r){r.i.value=0});calc();
+ }).catch(fallback);
 });
 </script>
 </body>
