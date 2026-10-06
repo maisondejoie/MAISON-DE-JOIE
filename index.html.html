@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maison de Joie – Order Form</title>
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#17300d;--card:#1f3d14;--line:#b8923a;--gold:#e0b858;--text:#f6f1e3;--muted:#c9d1bd;--field:#12270a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:640px;margin:0 auto;padding:28px 18px 48px}
+header{text-align:center;padding:10px 0 24px}
+.logo{font-family:'Pinyon Script',cursive;font-size:3rem;line-height:1.05;margin:0}
+.est{letter-spacing:.25em;font-size:.7rem;color:var(--gold);margin-top:8px}
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:16px 0}
+.notice{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:.9rem;text-align:center;color:var(--muted)}
+.notice b{color:var(--gold)}
+section{margin-top:26px}
+h2{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--gold);margin:0 0 10px;font-weight:600}
+label.f{display:block;font-size:.85rem;color:var(--muted);margin-bottom:12px}
+input,textarea{width:100%;margin-top:4px;padding:11px 12px;background:var(--field);color:var(--text);border:1px solid var(--line);border-radius:8px;font:inherit}
+input:focus,textarea:focus{outline:2px solid var(--gold);outline-offset:1px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.item{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid rgba(184,146,58,.3)}
+.item .n{flex:1}.item .p{color:var(--gold);font-size:.85rem}
+.qty{display:flex;align-items:center;gap:6px}
+.qty button{width:32px;height:32px;border-radius:50%;border:1px solid var(--gold);background:transparent;color:var(--gold);font-size:1.1rem;cursor:pointer}
+.qty input{width:48px;margin:0;text-align:center;padding:6px 2px}
+.total{display:flex;justify-content:space-between;font-family:'Cormorant Garamond',serif;font-size:1.4rem;margin-top:22px}
+.total span:last-child{color:var(--gold)}
+.submit{width:100%;margin-top:18px;padding:14px;border:0;border-radius:999px;background:linear-gradient(135deg,#f0cd75,#b8923a);color:#17300d;font:600 1rem Inter,sans-serif;letter-spacing:.06em;cursor:pointer}
+.msg{margin-top:14px;font-size:.88rem;text-align:center;color:var(--muted)}
+.err{color:#ffb4a4}
+.copy{background:none;border:0;color:var(--gold);text-decoration:underline;cursor:pointer;font:inherit}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1 class="logo">Maison de Joie</h1>
+<div class="est">EST. 2025</div>
+</header>
+<div class="notice"><b>Pick-up only.</b> Walang delivery. Pakipili ang petsa at oras ng pick-up.</div>
+
+<form id="f" novalidate>
+<section>
+<h2>Your Details</h2>
+<label class="f">Full Name *<input id="name" required autocomplete="name"></label>
+<div class="row2">
+<label class="f">Mobile Number *<input id="phone" type="tel" required autocomplete="tel"></label>
+<label class="f">Email (optional)<input id="email" type="email" autocomplete="email"></label>
+</div>
+<div class="row2">
+<label class="f">Pick-up Date *<input id="date" type="date" required></label>
+<label class="f">Pick-up Time *<input id="time" type="time" required></label>
+</div>
+</section>
+
+<div class="rule"></div>
+<section><h2>Breads</h2><div id="breads"></div></section>
+<section><h2>Pastries</h2><div id="pastries"></div></section>
+
+<section>
+<h2>Notes</h2>
+<label class="f">Special requests / allergies<textarea id="notes" rows="3"></textarea></label>
+</section>
+
+<div class="total"><span>Estimated Total</span><span id="total">₱0</span></div>
+<button class="submit" type="submit">SUBMIT ORDER</button>
+<div class="msg" id="msg"></div>
+</form>
+</div>
+
+<script>
+// EDIT MENU HERE: [name, price]
+var MENU={
+ breads:[["Pandesal (6 pcs)",40],["Ensaymada",35],["Loaf Bread",120],["Cheese Bread",30]],
+ pastries:[["Croissant",85],["Chocolate Chip Cookie",45],["Brownie",60],["Cinnamon Roll",75]]
+};
+var EMAIL="maisondejoie0216@gmail.com",rows=[];
+function build(id,list){
+ var c=document.getElementById(id);
+ list.forEach(function(it){
+  var d=document.createElement("div");d.className="item";
+  d.innerHTML='<div class="n">'+it[0]+'<div class="p">₱'+it[1]+'</div></div><div class="qty"><button type="button" aria-label="minus">−</button><input type="number" min="0" max="99" value="0" inputmode="numeric" aria-label="Quantity"><button type="button" aria-label="plus">+</button></div>';
+  var inp=d.querySelector("input"),b=d.querySelectorAll("button");
+  b[0].onclick=function(){inp.value=Math.max(0,+inp.value-1);calc()};
+  b[1].onclick=function(){inp.value=Math.min(99,+inp.value+1);calc()};
+  inp.oninput=calc;
+  c.appendChild(d);rows.push({n:it[0],p:it[1],i:inp});
+ });
+}
+build("breads",MENU.breads);build("pastries",MENU.pastries);
+function calc(){
+ var t=0;rows.forEach(function(r){t+=(+r.i.value||0)*r.p});
+ document.getElementById("total").textContent="₱"+t;return t;
+}
+var dt=new Date();
+document.getElementById("date").min=dt.getFullYear()+"-"+String(dt.getMonth()+1).padStart(2,"0")+"-"+String(dt.getDate()).padStart(2,"0");
+
+var lastText="";
+function g(id){return document.getElementById(id).value.trim()}
+document.getElementById("f").addEventListener("submit",function(e){
+ e.preventDefault();
+ var m=document.getElementById("msg");m.className="msg";
+ if(!g("name")||!g("phone")||!g("date")||!g("time")){m.className="msg err";m.textContent="Pakilagay ang name, mobile number, at pick-up date/time.";return}
+ var lines=[];rows.forEach(function(r){var q=+r.i.value||0;if(q>0)lines.push("- "+q+" x "+r.n+" (₱"+(q*r.p)+")")});
+ if(!lines.length){m.className="msg err";m.textContent="Pumili po ng kahit isang item.";return}
+ lastText="NEW ORDER – PICK-UP\n\nName: "+g("name")+"\nMobile: "+g("phone")+"\nEmail: "+(g("email")||"-")+
+  "\nPick-up: "+g("date")+" at "+g("time")+"\n\nORDER:\n"+lines.join("\n")+"\n\nEstimated Total: ₱"+calc()+"\nNotes: "+(g("notes")||"-");
+ var url="mailto:"+EMAIL+"?subject="+encodeURIComponent("Order from "+g("name")+" – Pick-up "+g("date"))+"&body="+encodeURIComponent(lastText);
+ m.innerHTML='Bubuksan ang email app mo — pindutin ang <b>Send</b> para makumpleto ang order. Hindi bumukas? <button type="button" class="copy" id="cp">Kopyahin ang order</button> at i-email sa '+EMAIL+'.';
+ document.getElementById("cp").onclick=function(){
+  try{navigator.clipboard.writeText(lastText);this.textContent="Nakopya!"}catch(x){window.prompt("Copy:",lastText)}
+ };
+ window.location.href=url;
+});
+</script>
+</body>
+</html>
