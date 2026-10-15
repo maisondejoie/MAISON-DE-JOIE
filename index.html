@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maison de Joie | Bakery &middot; Quezon City</title>
+<meta name="description" content="Sourdough, focaccia, croissants and burnt cheesecake. Order by Instagram or Viber, pick-up only, book your own Lalamove, Grab or courier.">
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#17310a;--card:#1f3d14;--line:#b8923a;--gold:#e0b858;--text:#f6f1e3;--muted:#c9d1bd;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.5}
+.sr{position:absolute;left:-9999px}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+section.s{padding:48px 0 0}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 18px;background:#17310a;border-bottom:1px solid var(--line)}
+nav .b{font-family:'Pinyon Script',cursive;font-size:1.7rem;color:var(--text);text-decoration:none;line-height:1}
+nav .l{display:flex;align-items:center;gap:18px;font-size:.85rem}
+nav .l a{color:var(--muted);text-decoration:none}
+.btn{display:inline-block;padding:12px 26px;border-radius:999px;background:linear-gradient(135deg,#f0cd75,#b8923a);color:#17310a!important;font:600 .9rem Inter,sans-serif;letter-spacing:.05em;text-decoration:none;border:0;cursor:pointer}
+.btn.o{background:none;border:1px solid var(--gold);color:var(--gold)!important}
+nav .btn{padding:8px 16px;font-size:.78rem}
+.hero{text-align:center;padding:30px 18px 10px}
+.hero img{width:min(400px,84%);height:auto}
+.hero p{font-family:'Cormorant Garamond',serif;font-size:1.5rem;max-width:560px;margin:6px auto 0}
+.note{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-size:.9rem;color:var(--muted);max-width:640px;margin:20px auto 0;text-align:left}
+.note b{color:var(--gold)}
+.sub{font-size:.85rem;letter-spacing:.2em;color:var(--gold);margin-top:14px;text-transform:uppercase}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.sh{font-family:'Cormorant Garamond',serif;font-size:2.1rem;color:var(--gold);text-align:center;margin:0 0 6px;font-weight:600}
+.ss{text-align:center;color:var(--muted);font-size:.92rem;margin:0 0 24px}
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px}
+.gal figure{margin:0;position:relative;border:1px solid var(--line);border-radius:12px;overflow:hidden;aspect-ratio:4/5}
+.gal img{width:100%;height:100%;object-fit:cover;display:block}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 12px;background:linear-gradient(transparent,rgba(10,25,5,.92));font-family:'Cormorant Garamond',serif;font-size:1.25rem}
+.cn{font-family:'Cormorant Garamond',serif;font-size:2.3rem;font-weight:700;color:var(--gold);margin:40px 0 14px;scroll-margin-top:50px;border-bottom:1px solid rgba(184,146,58,.45);padding-bottom:6px;line-height:1.15}
+.chips{position:sticky;top:calc(env(safe-area-inset-top,0px) + 51px);z-index:9;display:flex;gap:8px;overflow-x:auto;background:var(--bg);margin:0 -18px;padding:10px 18px;scrollbar-width:none}
+.chips a{flex:none;padding:7px 16px;border:1px solid var(--gold);border-radius:999px;color:var(--gold);text-decoration:none;font-size:.85rem;white-space:nowrap}
+.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+.pc{background:var(--card);border:1px solid rgba(184,146,58,.5);border-radius:12px;overflow:hidden;position:relative}
+.pc .im{aspect-ratio:1/1;background:linear-gradient(135deg,#27501a,#1a3511);display:flex;align-items:center;justify-content:center;font-size:2.4rem}
+.pc img{width:100%;height:100%;object-fit:cover;display:block}
+.pc .t{padding:10px 12px 12px}
+.pc b{display:block;font-weight:500;font-size:.93rem;line-height:1.3}
+.pc span{color:var(--gold);font-size:.9rem}
+.pc.out .im,.pc.out .t{opacity:.45}
+.pc .so{position:absolute;top:10px;left:10px;background:rgba(10,25,5,.85);border:1px solid var(--muted);color:var(--text);font-size:.68rem;letter-spacing:.12em;padding:3px 10px;border-radius:999px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+.step{text-align:center;padding:0 8px}
+.step em{display:inline-flex;width:42px;height:42px;border-radius:50%;border:1px solid var(--gold);color:var(--gold);align-items:center;justify-content:center;font:1.3rem 'Cormorant Garamond',serif;font-style:normal;margin-bottom:8px}
+.step b{display:block}.step span{font-size:.88rem;color:var(--muted)}
+.tip{text-align:center;margin-top:22px;color:var(--muted);font-size:.9rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+.card .d{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--gold)}
+.card .st{color:#f0cd75;letter-spacing:.15em}
+.card p{margin:6px 0 0;color:var(--text);font-size:.93rem}
+.card small{color:var(--muted);display:block;margin-top:8px}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;align-items:start}
+.shots figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.shots img{width:100%;display:block;cursor:zoom-in}
+.shots figcaption{padding:8px 12px;font-size:.8rem;color:var(--muted);text-align:center}
+.fresh{display:none}
+.album{position:relative;max-width:340px;margin:0 auto 18px;padding:10px;background:var(--card);border:2px solid #c9a24a;border-radius:6px;cursor:pointer;box-shadow:8px 8px 0 -2px var(--bg),8px 8px 0 -1px rgba(201,162,74,.8),16px 16px 0 -4px var(--bg),16px 16px 0 -3px rgba(201,162,74,.55)}
+.album img{width:100%;height:auto;display:block;border:1px solid rgba(224,184,88,.7)}
+.albumbar{position:absolute;left:10px;right:10px;bottom:10px;padding:34px 14px 12px;background:linear-gradient(transparent,rgba(10,25,5,.93));display:flex;justify-content:space-between;align-items:baseline;font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--text)}
+.albumbar span{font:500 .8rem Inter,sans-serif;letter-spacing:.08em;color:var(--gold)}
+.fresh img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:12px;cursor:zoom-in}
+.pl{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.pr{position:relative;display:flex;flex-direction:column;gap:6px;min-height:108px;padding:14px 14px 12px;background:var(--card);border:1px solid rgba(184,146,58,.4);border-left:3px solid var(--gold);border-radius:12px}
+.pr .th{width:100%;aspect-ratio:4/3;height:auto;border-radius:10px;object-fit:cover;border:1px solid var(--line);margin-bottom:6px;display:block}
+.pr .nm{font-size:1.15rem;font-weight:500;line-height:1.3}
+.pr .dots{display:none}
+.pr .pp{margin-top:auto;color:var(--gold);font-weight:600;font-size:1.15rem}
+.pr.out{opacity:.5}.pr.out .nm{text-decoration:line-through}
+.pr .so2{position:absolute;top:10px;right:10px;font-size:.58rem;letter-spacing:.1em;border:1px solid var(--muted);color:var(--text);padding:2px 8px;border-radius:999px;white-space:nowrap}
+@media(min-width:700px){.pl{grid-template-columns:repeat(auto-fill,minmax(205px,1fr))}}
+.bh{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--gold);text-align:center;margin:38px 0 14px}
+.booths{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.booths figure{margin:0;padding:10px;background:var(--card);border:2px solid #c9a24a;border-radius:6px;box-shadow:0 0 0 4px var(--bg),0 0 0 5px rgba(201,162,74,.5)}
+.booths img{width:100%;height:auto;display:block;border:1px solid rgba(224,184,88,.7);cursor:zoom-in}
+#ab{display:none;position:fixed;inset:0;z-index:40;background:var(--bg);overflow-y:auto;-webkit-overflow-scrolling:touch}
+#ab.on{display:block}
+.abh{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:calc(env(safe-area-inset-top,0px) + 12px) 14px 12px;background:var(--bg);border-bottom:1px solid var(--line)}
+.abh b{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--gold);font-weight:700}
+#abx{width:42px;height:42px;border-radius:50%;background:none;border:1px solid var(--gold);color:var(--gold);font-size:1.6rem;line-height:1;cursor:pointer}
+.abg{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 14px 40px;max-width:980px;margin:0 auto}
+.abt{position:relative;padding-top:100%;border:1px solid var(--line);border-radius:10px;overflow:hidden;cursor:pointer;background:var(--card)}
+.abt img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+@media(min-width:700px){.abg{grid-template-columns:repeat(4,1fr)}}
+#lb{display:none;position:fixed;inset:0;z-index:50;background:rgba(8,18,4,.96);align-items:center;justify-content:center;padding:56px 12px 24px}
+#lb.on{display:flex}
+#lb figure{margin:0;text-align:center;max-width:100%}
+#lb img{max-width:100%;max-height:74vh;display:block;margin:0 auto;border:2px solid #c9a24a;border-radius:4px}
+#lb figcaption{margin-top:12px;font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--gold)}
+#lb button{position:absolute;background:rgba(23,49,10,.9);border:1px solid var(--gold);color:var(--gold);border-radius:50%;width:44px;height:44px;font-size:1.7rem;line-height:1;cursor:pointer}
+#lbx{top:calc(env(safe-area-inset-top,0px) + 10px);right:12px}
+#lb .nv{top:50%;margin-top:-22px}
+#lbp{left:8px}#lbn{right:8px}
+.fresh img,.shots img,.booths img{cursor:pointer}
+.empty{text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:12px;padding:22px}
+.visit{text-align:center;border-top:1px solid var(--line);margin-top:56px;padding:34px 0 10px}
+.visit p{margin:4px 0;color:var(--muted)}
+footer{text-align:center;padding:18px 18px 34px;font-size:.8rem;color:var(--muted)}
+@media(max-width:560px){nav .l a.t{display:none}}
+.gal figure.hl{border:2px solid var(--gold);box-shadow:0 0 0 1px var(--bg),0 0 26px rgba(224,184,88,.45)}
+.gal figure.hl::before{content:"";position:absolute;inset:8px;border:1px solid rgba(224,184,88,.75);border-radius:8px;z-index:1;pointer-events:none}
+.gal figure.hl figcaption{color:var(--gold);background:linear-gradient(transparent,rgba(23,49,10,.95))}
+.pr{cursor:pointer;transition:background .15s,box-shadow .15s}
+.pr.out{cursor:default}
+.pr.sel{background:#2a4d1b;border-color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold)}
+.qc{display:flex;align-items:center;gap:10px;min-height:32px;margin-top:4px}
+.qc .ad{font:600 .72rem Inter,sans-serif;letter-spacing:.08em;color:var(--gold);border:1px dashed rgba(224,184,88,.6);border-radius:999px;padding:5px 12px}
+.qc button,.crow button{width:32px;height:32px;border-radius:50%;border:1px solid var(--gold);background:none;color:var(--gold);font:600 1.15rem/1 Inter,sans-serif;cursor:pointer;padding:0}
+.qc b{min-width:20px;text-align:center;font-size:1.05rem}
+#cbar{display:none;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:30;max-width:560px;margin:0 auto;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px 10px 18px;background:var(--card);border:1.5px solid var(--gold);border-radius:999px;box-shadow:0 6px 24px rgba(0,0,0,.45);cursor:pointer}
+#cbar.on{display:flex}
+#cbar .ct{font-size:.9rem;line-height:1.25}
+#cbar .ct b{display:block;color:var(--gold);font-size:1.1rem}
+body.hascart footer{padding-bottom:96px}
+#cart{display:none;position:fixed;inset:0;z-index:60;background:rgba(8,18,4,.85);align-items:flex-end;justify-content:center}
+#cart.on{display:flex}
+#cart .pn{width:100%;max-width:560px;max-height:92vh;overflow-y:auto;background:var(--bg);border:2px solid var(--line);border-bottom:0;border-radius:18px 18px 0 0;padding:18px 18px calc(22px + env(safe-area-inset-bottom,0px))}
+#cart .ph{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+#cart .ph b{font:600 1.5rem 'Cormorant Garamond',serif;color:var(--gold)}
+#cart .ph button{background:none;border:0;color:var(--text);font-size:1.8rem;line-height:1;cursor:pointer}
+.crow{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid rgba(184,146,58,.3)}
+.crow .cn2{line-height:1.3}.crow .cn2 small{display:block;color:var(--muted);font-size:.78rem}
+.crow .qq{display:flex;align-items:center;gap:8px}.crow .qq b{min-width:18px;text-align:center}
+.crow .lt{min-width:62px;text-align:right;color:var(--gold);font-weight:600}
+.ctot{display:flex;justify-content:space-between;font-size:1.25rem;padding:14px 0 4px}
+.ctot b{color:var(--gold)}
+.cnote{color:var(--muted);font-size:.82rem;margin:4px 0 14px}
+.cact{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.cclr{background:none;border:0;color:var(--muted);text-decoration:underline;cursor:pointer;font:.82rem Inter,sans-serif;margin-top:12px;display:block;margin-left:auto;margin-right:auto}
+.cdt{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 4px}
+.cdt label{display:block;font-size:.78rem;color:var(--muted);letter-spacing:.04em}
+.cdt input{width:100%;box-sizing:border-box;margin-top:4px;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--text);font:1rem Inter,sans-serif;color-scheme:dark}
+.cdh{font-size:.78rem;color:var(--muted);margin:2px 0 0}
+#cde{color:#f0b3a3;font-size:.82rem;margin:4px 0 0;min-height:1em}
+</style>
+</head>
+<body>
+<nav><a class="b" href="#top">Maison de Joie</a><div class="l"><a class="t" href="#products">Products</a><a class="t" href="#popup">Pop-up</a><a class="t" href="#reviews">Reviews</a><a class="btn o vbl t" href="#" target="_blank" rel="noopener">Viber</a><a class="btn igl" href="#" target="_blank" rel="noopener">Order on IG</a></div></nav>
+<main id="top">
+<section class="hero">
+<h1 class="sr">Maison de Joie</h1>
+<img src="photos/hero.jpg" alt="Maison de Joie logo">
+<p>Freshly baked sourdough, focaccia, croissants, cookies and burnt cheesecake.</p>
+<div class="sub">Pick-up only &middot; Book your own courier</div>
+<div class="cta"><a class="btn igl" href="#" target="_blank" rel="noopener">Order via Instagram DM</a><a class="btn vbl" href="#" target="_blank" rel="noopener">Order via Viber</a><a class="btn o" href="#products">See Products</a></div>
+<div class="note"><b>Pick-up only:</b> We do not deliver. Customers book their own rider through <b>Lalamove, Grab, or any other delivery service</b> to pick up the order.</div>
+<div class="note" style="margin-top:12px"><b>Please note:</b> Orders must be placed at least <b>2 days in advance</b> of your preferred pick-up date. Available products depend on daily stock, so please confirm availability with us when you order.</div>
+</section>
+<div class="wrap">
+<div class="gal">
+<figure class="hl"><img src="photos/gallery-sourdough.jpg" alt="Maison de Joie sourdough loaf with wheat-leaf scoring" style="object-position:50% 70%"><figcaption>Sourdough &amp; Focaccia</figcaption></figure>
+<figure><img src="photos/gallery-croissants.jpg" alt="Croissants"><figcaption>Croissants &amp; Pastries</figcaption></figure>
+</div>
+
+<section class="s" id="gallery">
+<h2 class="sh">Fresh From Our Kitchen</h2>
+<p class="ss">A peek at what we bake. Tap the album to see all photos.</p>
+<div class="album" id="album" role="button" tabindex="0" aria-label="View Breads and Pastries"><img id="albumimg" src="photos/album-cover.jpg" alt="Maison de Joie logo - photo album cover"><div class="albumbar"><b>View Breads &amp; Pastries</b><span id="albumn"></span></div></div>
+<div class="fresh">
+<img src="photos/fresh-01.jpg" alt="Fresh from our kitchen" loading="lazy">
+<img src="photos/fresh-02.jpg" alt="Fresh from our kitchen" loading="lazy">
+<img src="photos/fresh-03.jpg" alt="Fresh from our kitchen" loading="lazy">
+<img src="photos/fresh-04.jpg" alt="Fresh from our kitchen" loading="lazy">
+<img src="photos/fresh-05.jpg" alt="Fresh from our kitchen" loading="lazy">
+<img src="photos/fresh-06.jpg" alt="Fresh from our kitchen" loading="lazy">
+<img src="photos/fresh-07.jpg" alt="Fresh from our kitchen" loading="lazy">
+<img src="photos/fresh-08.jpg" alt="Fresh from our kitchen" loading="lazy">
+<img src="photos/fresh-09.jpg" alt="Fresh from our kitchen" loading="lazy">
+<img src="photos/fresh-10.jpg" alt="Fresh from our kitchen" loading="lazy">
+<img src="photos/fresh-11.jpg" alt="Fresh from our kitchen" loading="lazy">
+<img src="photos/fresh-12.jpg" alt="Fresh from our kitchen" loading="lazy">
+<img src="photos/fresh-13.jpg" alt="Fresh from our kitchen" loading="lazy">
+<img src="photos/fresh-14.jpg" alt="Fresh from our kitchen" loading="lazy">
+<img src="photos/fresh-15.jpg" alt="Fresh from our kitchen" loading="lazy">
+<img src="photos/fresh-16.jpg" alt="Fresh from our kitchen" loading="lazy">
+<img src="photos/fresh-17.jpg" alt="Fresh from our kitchen" loading="lazy">
+<img src="photos/fresh-18.jpg" alt="Fresh from our kitchen" loading="lazy">
+<img src="photos/fresh-19.jpg" alt="Fresh from our kitchen" loading="lazy">
+<img src="photos/fresh-20.jpg" alt="Fresh from our kitchen" loading="lazy">
+<img src="photos/fresh-21.jpg" alt="Fresh from our kitchen" loading="lazy">
+<img src="photos/fresh-22.jpg" alt="Fresh from our kitchen" loading="lazy">
+</div>
+</section>
+
+<section class="s" id="products">
+<h2 class="sh">Our Products</h2>
+<p class="ss">Freshly baked. Order by message on Instagram or Viber.<br>Availability varies, so please confirm your items with us.<br><b style="color:var(--gold)">Tap an item to add it to your order. Tap a photo to enlarge it.</b></p>
+<div id="menu"></div>
+</section>
+
+<section class="s" id="how">
+<h2 class="sh">How to Order</h2>
+<p class="ss">Simple and easy, through Instagram DM or Viber.</p>
+<div class="steps">
+<div class="step"><em>1</em><b>Pick your bakes</b><span>Browse our products above.</span></div>
+<div class="step"><em>2</em><b>Copy the order template</b><span>Fill in your name, items, courier, and preferred pick-up date (at least 2 days from today).</span></div>
+<div class="step"><em>3</em><b>Send us a DM</b><span>Paste it into our Instagram DM or Viber and wait for our confirmation.</span></div>
+<div class="step"><em>4</em><b>Book your rider</b><span>Once confirmed, book Lalamove, Grab, or any courier to pick up your order.</span></div>
+</div>
+<div class="cta"><button class="btn o" id="cp" type="button">Copy Order Template</button><a class="btn igl" href="#" target="_blank" rel="noopener">Open Instagram DM</a><a class="btn o vbl" href="#" target="_blank" rel="noopener">Open Viber</a></div>
+<div class="tip" id="cpm"></div>
+<div class="note"><b>Reminder:</b> We do not deliver, so please book your own courier. Order at least <b>2 days before</b> your preferred pick-up date. Not all products are available every day, so we will confirm what is available when you send your order.</div>
+</section>
+
+<section class="s" id="popup">
+<h2 class="sh">Pop-up Stores</h2>
+<p class="ss">Find us at these upcoming pop-ups.</p>
+<div class="cards" id="pops"></div>
+<h3 class="bh">Our Pop-up Booths</h3>
+<div class="booths">
+<figure><img src="photos/booth-1.jpg" alt="Our pop-up booth with sourdough, focaccia and pastries" loading="lazy"></figure>
+<figure><img src="photos/booth-2.jpg" alt="Maison de Joie booth with menus and fresh bakes" loading="lazy"></figure>
+<figure><img src="photos/booth-3.jpg" alt="Our pop-up display of breads, croissants and pastries" loading="lazy"></figure>
+</div>
+</section>
+
+<section class="s" id="reviews">
+<h2 class="sh">Customer Reviews</h2>
+<p class="ss">What our customers say.</p>
+<div class="shots">
+<figure><img src="photos/review-1.jpg" alt="Customer chat about our bakes"><figcaption>Message from a customer</figcaption></figure>
+<figure><img src="photos/review-2.jpg" alt="Facebook comment recommending Maison de Joie egg tarts"><figcaption>Facebook comment</figcaption></figure>
+<figure><img src="photos/review-3.jpg" alt="Instagram message from a customer"><figcaption>Instagram message</figcaption></figure>
+</div>
+<div class="cards" id="revs" style="margin-top:14px"></div>
+<div id="ab"><div class="abh"><b>Fresh From Our Kitchen</b><button id="abx" type="button" aria-label="Close album">&times;</button></div><div class="abg" id="abg"></div></div>
+<div id="lb"><button id="lbx" type="button" aria-label="Close">&times;</button><button id="lbp" class="nv" type="button" aria-label="Previous">&#8249;</button><figure><img id="lbi" alt=""><figcaption id="lbc"></figcaption></figure><button id="lbn" class="nv" type="button" aria-label="Next">&#8250;</button></div>
+</section>
+
+</div>
+</main>
+<footer>&copy; 2025 Maison de Joie &middot; <a class="igl" href="#" target="_blank" rel="noopener" style="color:var(--gold)">Instagram</a> &middot; <a class="vbl" href="#" target="_blank" rel="noopener" style="color:var(--gold)">Viber</a></footer>
+
+<div id="cbar" role="button" tabindex="0" aria-label="View my order"><div class="ct"><span id="cbn"></span><b id="cbt"></b></div><span class="btn">View Order</span></div>
+<div id="cart"><div class="pn"><div class="ph"><b>Your Order</b><button id="cx" type="button" aria-label="Close">&times;</button></div><div id="cl"></div><div class="ctot"><span>Total</span><b id="ctt"></b></div><div class="cdt"><label>Pick-up date<input type="date" id="cdate"></label><label>Pick-up time<input type="time" id="ctime"></label></div><div class="cdh">Optional. You can also type your date and time in the chat. Please order at least 2 days before.</div><div id="cde"></div><div class="cnote">Total is for items only. We will confirm availability before you pay.</div><div class="cact"><button class="btn" id="ccp" type="button">Copy Order</button><a class="btn igl o" href="#" target="_blank" rel="noopener">Open Instagram DM</a><a class="btn o vbl" href="#" target="_blank" rel="noopener">Open Viber</a></div><div class="tip" id="ccm" style="margin-top:12px"></div><button class="cclr" id="cclr" type="button">Clear order</button></div></div>
+<script>
+// ================== SETTINGS ==================
+var IG_USERNAME="maisondejoie_byjoy216";   // <-- REPLACE with your real IG username (no @)
+var VIBER_NUMBER="09178921678";   // Viber number
+
+// ---------- PRODUCTS ----------
+// Item: ["Name", price]
+// With picture (optional, shows a small round photo):  ["Name", price, "picture-file-name.jpg"]
+// Sold out:      ["Name", price, "", "soldout"]  (or ["Name", price, "pic.jpg", "soldout"])
+// Upload the picture to GitHub, in the same place as index.html.
+var MENU=[
+ ["Sourdough",[
+ ["Black Sesame",360,"black_sesame"],["Blueberry",420],["Cheddar & Jalapeno",450,"cheddar_and_jalapeno_sourdough"],["Coffee, Choco and Walnut",480,"coffee_choco_and_walnut"],
+ ["Dark Chocolate",410,"dark_chocolate"],["Hearty Sourdough",340,"hearty_sourdough"],["Multiseeds",390,"multiseeds"],["Olives & Rosemary",360,"olives_and_rosemary_sourdough"],
+ ["Walnut & Cranberry",400,"walnut_and_cranberry"]
+ ]],
+ ["Focaccia",[
+ ["Almond Frangipane",460,"almond_frangipane"],["Bacon and Mushroom",550,"bacon_and_mushroom_focaccia"],["Cheddar & Jalapeno",420,"cheddar_and_jalapeno_focaccia"],["Cheesy Corn",450,"cheesy_corn"],
+ ["Cherry Tomato",360],["Chilli Garlic with Cheddar",410],["Olives & Rosemary",340,"olives_and_rosemary_focaccia"],["Pepperoni",550,"pepperoni"],
+ ["Pesto & Cherry Tomato",360,"pesto_and_cherry_tomato"],["Puttanesca",460],["Salsa Verde",420],["Scallion & Chili Garlic",340,"scallion_and_chili_garlic"],
+ ["Sea Salt (Plain)",300,"sea_salt"],["Spicy Tuyo w/ Cherry Tomato",350,"spicy_with_cherry_tomato"],["Truffle Mushroom",450,"truffle_mushroom"],["Ube",420],["Verde",420]
+ ]],
+ ["Burnt Cheesecake",[
+ ["Biscoff",320],["Blueberry",320],["New York (Plain)",300],["Oreo",310]
+ ]],
+ ["Croissant",[
+ ["Bacon and Mushroom",150,"bacon_and_mushroom"],["Bacon Sausage",170,"bacon_sausage"],["Brown Butter Crookie",260,"brown_butter_cookie"],["Butter Croissant",120,"butter_croissant"],
+ ["Chicken Mushroom",210,"chicken_mushroom"],["Choco Flan",190,"choco_flan"],["Cinnamon",130,"cinnamon"],["Corned Beef",220,"corned_beef"],["Ham & Cheese",160,"ham_and_cheese"],
+ ["Hazelnut Pain Suisse",220,"hazelnut_pan_suisse"],["Honey Butter",150,"honey_butter"],["Kouign Aman",130],["Multiseed Croissant",130],["Pain Au Chocolat",140,"pain_au_chocolat"],
+ ["Pepperoni Croizza",150,"pepperoni_croizza"],["Punch Amann",130],["Quiche",230,"quiche"],["Salted Caramel Brownie",190,"salted_caramel"],["Tuna",210],
+ ["Twice Baked Almond",200,"twice_baked_almond"],["Ube Pastillas",250,"ube_pastillas_with_crumble"],["White Chocolate Vanilla Flan",190,"white_chocolate_vanilla_flan"]
+ ]],
+ ["Cookies",[
+ ["Banana Oats Chocolate",160,"banana_oats_chocolate"],["Biscoff",160,"biscoff_cookie"],["Black Sesame, Ube, Matcha",160],["Browned Butter Choco",140,"browned_butter_choco"],
+ ["Choco Chip Walnut",150,"choco_chip_walnut"],["Midnight Oreo",150],["Pistachio",160],["White Chocolate Matcha",160,"white_chocolate_matcha"]
+ ]],
+ ["Others",[
+ ["Cheeseroll",75],["Ensaymada",120],["Milk Choco w/ Walnut",390],["Pastel de Nata (Tart)",75],
+ ["Pastel de Nata by 4's",290],["Sinful Dark Choco Brownie by 4's",360]
+ ]]
+];
+
+// Product photos: one picture per product, used for the card and for the enlarged view. Files are in the photos/products folder.
+var PICS={"almond_frangipane":"photos/products/almond_frangipane.jpg","bacon_and_mushroom_focaccia":"photos/products/bacon_and_mushroom_focaccia.jpg","cheddar_and_jalapeno_focaccia":"photos/products/cheddar_and_jalapeno_focaccia.jpg","cheesy_corn":"photos/products/cheesy_corn.jpg","olives_and_rosemary_focaccia":"photos/products/olives_and_rosemary_focaccia.jpg","pepperoni":"photos/products/pepperoni.jpg","pesto_and_cherry_tomato":"photos/products/pesto_and_cherry_tomato.jpg","scallion_and_chili_garlic":"photos/products/scallion_and_chili_garlic.jpg","sea_salt":"photos/products/sea_salt.jpg","spicy_with_cherry_tomato":"photos/products/spicy_with_cherry_tomato.jpg","truffle_mushroom":"photos/products/truffle_mushroom.jpg","black_sesame":"photos/products/black_sesame.jpg","cheddar_and_jalapeno_sourdough":"photos/products/cheddar_and_jalapeno_sourdough.jpg","coffee_choco_and_walnut":"photos/products/coffee_choco_and_walnut.jpg","dark_chocolate":"photos/products/dark_chocolate.jpg","hearty_sourdough":"photos/products/hearty_sourdough.jpg","multiseeds":"photos/products/multiseeds.jpg","olives_and_rosemary_sourdough":"photos/products/olives_and_rosemary_sourdough.jpg","walnut_and_cranberry":"photos/products/walnut_and_cranberry.jpg","bacon_and_mushroom":"photos/products/bacon_and_mushroom.jpg","bacon_sausage":"photos/products/bacon_sausage.jpg","brown_butter_cookie":"photos/products/brown_butter_cookie.jpg","butter_croissant":"photos/products/butter_croissant.jpg","chicken_mushroom":"photos/products/chicken_mushroom.jpg","choco_flan":"photos/products/choco_flan.jpg","cinnamon":"photos/products/cinnamon.jpg","corned_beef":"photos/products/corned_beef.jpg","ham_and_cheese":"photos/products/ham_and_cheese.jpg","hazelnut_pan_suisse":"photos/products/hazelnut_pan_suisse.jpg","honey_butter":"photos/products/honey_butter.jpg","pain_au_chocolat":"photos/products/pain_au_chocolat.jpg","pepperoni_croizza":"photos/products/pepperoni_croizza.jpg","quiche":"photos/products/quiche.jpg","salted_caramel":"photos/products/salted_caramel.jpg","twice_baked_almond":"photos/products/twice_baked_almond.jpg","ube_pastillas_with_crumble":"photos/products/ube_pastillas_with_crumble.jpg","white_chocolate_vanilla_flan":"photos/products/white_chocolate_vanilla_flan.jpg","banana_oats_chocolate":"photos/products/banana_oats_chocolate.jpg","biscoff_cookie":"photos/products/biscoff_cookie.jpg","browned_butter_choco":"photos/products/browned_butter_choco.jpg","choco_chip_walnut":"photos/products/choco_chip_walnut.jpg","white_chocolate_matcha":"photos/products/white_chocolate_matcha.jpg"};
+var BIG=PICS;
+
+// ---------- POP-UP STORES ----------
+// Format: ["Date and time", "Place", "Extra note (optional, can be empty)"],
+// Example: ["Sat, Nov 15 · 9AM - 2PM", "Venue name, Quezon City", "Bring your order template"],
+var POPUPS=[
+];
+
+// ---------- TYPED REVIEWS (optional) ----------
+// Format: ["Customer name", "Their review", 5],   (last number = stars, 1 to 5)
+var REVIEWS=[
+];
+// ---------- PHOTO GALLERY ("Fresh From Our Kitchen") ----------
+// To add more photos: upload the picture to GitHub (same place as index.html), then add a line:
+// ["photo-file-name.jpg", "Caption (name of the bread or pastry)"],
+// Tip: use pictures about 1000 px wide so the page stays fast.
+var GALLERY=[
+];
+// Which photo is the album cover? 0 = first photo, 1 = second, 2 = third, ...
+var ALBUM_COVER=0;
+// ===============================================
+
+var IG_DM="https://ig.me/m/"+IG_USERNAME, IG_PROFILE="https://instagram.com/"+IG_USERNAME;
+document.querySelectorAll(".igl").forEach(function(a){a.href=IG_DM});
+document.querySelectorAll(".vbl").forEach(function(a){a.href="viber://chat?number=%2B63"+VIBER_NUMBER.slice(1)});
+
+function mk(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!==undefined)e.innerHTML=html;return e}
+function txt(s){var d=document.createElement("div");d.textContent=s;return d.innerHTML}
+
+var CART={},ITEMS={},CARDS={},PESO="\u20B1";
+function money(n){return PESO+n.toLocaleString("en-PH")}
+function setQ(k,q){q=Math.max(0,Math.min(99,q));if(q)CART[k]=q;else delete CART[k];renderCart()}
+function renderCart(){
+ var tot=0,cnt=0;
+ Object.keys(CARDS).forEach(function(k){var q=CART[k]||0,c=CARDS[k];c.classList.toggle("sel",q>0);c.querySelector(".qc").innerHTML=q?'<button type="button" data-d="-1" aria-label="Less">&minus;</button><b>'+q+'</b><button type="button" data-d="1" aria-label="More">+</button>':'<span class="ad">+ ADD</span>'});
+ var l=document.getElementById("cl");l.innerHTML="";
+ Object.keys(CART).forEach(function(k){var it=ITEMS[k],q=CART[k];tot+=it.price*q;cnt+=q;
+  var r=mk("div","crow",'<div class="cn2">'+txt(it.name)+'<small>'+txt(it.cat)+' &middot; '+money(it.price)+'</small></div><div class="qq"><button type="button" data-d="-1" aria-label="Less">&minus;</button><b>'+q+'</b><button type="button" data-d="1" aria-label="More">+</button></div><div class="lt">'+money(it.price*q)+'</div>');
+  r.onclick=function(e){var b=e.target.closest("button");if(b)setQ(k,q+parseInt(b.getAttribute("data-d"),10))};l.appendChild(r)});
+ document.getElementById("cbn").textContent=cnt+(cnt===1?" item":" items");
+ document.getElementById("cbt").textContent=money(tot);
+ document.getElementById("ctt").textContent=money(tot);
+ document.getElementById("cbar").classList.toggle("on",cnt>0);
+ document.body.classList.toggle("hascart",cnt>0);
+ if(!cnt)copen(false);
+}
+function copen(on){document.getElementById("cart").classList.toggle("on",on);document.body.style.overflow=on?"hidden":""}
+var DAYS=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],MONS=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function sp(v){return v?" "+v:""}
+function pad(n){return(n<10?"0":"")+n}
+function minDate(){var d=new Date();d.setDate(d.getDate()+2);return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())}
+function fmtDate(v){if(!v)return"";var p=v.split("-"),d=new Date(+p[0],+p[1]-1,+p[2]);return MONS[d.getMonth()]+" "+d.getDate()+", "+d.getFullYear()+" ("+DAYS[d.getDay()]+")"}
+function fmtTime(v){if(!v)return"";var p=v.split(":"),h=+p[0];return(h%12||12)+":"+p[1]+" "+(h<12?"AM":"PM")}
+function orderText(){
+ var keys=Object.keys(CART),lines="",tot=0;
+ if(keys.length){keys.forEach(function(k,i){var it=ITEMS[k],q=CART[k];tot+=it.price*q;lines+=(i+1)+". "+it.cat+" - "+it.name+" x"+q+" = "+money(it.price*q)+"\n"});lines+="\nTOTAL: "+money(tot)+" (items only)"}
+ else lines="1.\n2.\n3.";
+ return "MAISON DE JOIE \u2013 ORDER\n(Pick-up only. Customer books own courier)\n\nName:\nMobile number:\nPreferred pick-up date (at least 2 days from today):"+sp(fmtDate(document.getElementById("cdate").value))+"\nPick-up time:"+sp(fmtTime(document.getElementById("ctime").value))+"\nCourier (Lalamove / Grab / other):\n\nORDER (item / qty):\n"+lines+"\n\nNotes / allergies:";
+}
+function copyOrder(el,msg){var t=orderText();
+ try{navigator.clipboard.writeText(t).then(function(){el.textContent=msg},function(){window.prompt("Copy this:",t)})}catch(e){window.prompt("Copy this:",t)}}
+var chips=mk("div","chips");
+MENU.forEach(function(g,i){var a=mk("a","",txt(g[0]));a.href="#cat-"+i;chips.appendChild(a)});
+document.getElementById("menu").appendChild(chips);
+MENU.forEach(function(g,gi){
+ var sec=mk("section","",'<h3 class="cn" id="cat-'+gi+'">'+txt(g[0])+'</h3>'),grid=mk("div","pl");
+ g[1].forEach(function(it){
+  var out=it[2]==="soldout"||it[3]==="soldout",img=(it[2]&&it[2]!=="soldout")?(PICS[it[2]]||it[2]):"";
+  var c=mk("div","pr"+(out?" out":""));
+  c.innerHTML=(img?'<img class="th" src="'+txt(img)+'" alt="'+txt(it[0])+'" loading="lazy">':'')+'<span class="nm">'+txt(it[0])+'</span><span class="dots"></span><span class="pp">&#8369;'+it[1]+'</span>'+(out?'<span class="so2">SOLD OUT</span>':'');
+  var th=c.querySelector(".th");
+  if(th&&g[0]==="Sourdough")th.style.objectPosition="50% 75%";
+  if(th&&BIG[it[2]]){th.style.cursor="zoom-in";th.setAttribute("role","button");th.onclick=function(e){e.stopPropagation();var l=[],ix=0;g[1].forEach(function(x){if(BIG[x[2]]){if(x===it)ix=l.length;l.push({src:BIG[x[2]],alt:x[0]})}});vopen(l,ix)}}
+  if(!out){var key=g[0]+"|"+it[0];ITEMS[key]={cat:g[0],name:it[0],price:it[1]};c.setAttribute("data-k",key);var ctl=mk("div","qc");c.appendChild(ctl);CARDS[key]=c;
+   c.onclick=function(e){var b=e.target.closest("button");if(b){setQ(key,(CART[key]||0)+parseInt(b.getAttribute("data-d"),10))}else{setQ(key,(CART[key]||0)+1)}}}
+  grid.appendChild(c);
+ });
+ sec.appendChild(grid);document.getElementById("menu").appendChild(sec);
+});
+
+var pops=document.getElementById("pops");
+if(!POPUPS.length)pops.appendChild(mk("div","empty","No pop-ups scheduled yet. <a href='"+IG_PROFILE+"' target='_blank' rel='noopener' style='color:var(--gold)'>Follow us on Instagram</a> for updates."));
+POPUPS.forEach(function(p){pops.appendChild(mk("div","card",'<div class="d">'+txt(p[0])+'</div><p>&#128205; '+txt(p[1])+'</p>'+(p[2]?'<small>'+txt(p[2])+'</small>':'')))});
+
+var revs=document.getElementById("revs");
+REVIEWS.forEach(function(r){var n=Math.max(1,Math.min(5,r[2]||5));revs.appendChild(mk("div","card",'<div class="st">'+"&#9733;".repeat(n)+'</div><p>&ldquo;'+txt(r[1])+'&rdquo;</p><small>&mdash; '+txt(r[0])+'</small>'))});
+
+GALLERY.forEach(function(g){var im=document.createElement("img");im.src=g[0];im.alt=g[1]||"";im.loading="lazy";document.querySelector(".fresh").appendChild(im)});
+var lb=document.getElementById("lb"),vw={list:[],i:0};
+function vshow(){var it=vw.list[vw.i],n=vw.list.length,cap=vw.nocap?"":(it.alt||"");document.getElementById("lbi").src=it.src;document.getElementById("lbi").alt=it.alt;document.getElementById("lbc").textContent=cap+(n>1?(cap?"  ":"")+"("+(vw.i+1)+" / "+n+")":"");document.getElementById("lbp").style.display=document.getElementById("lbn").style.display=n>1?"block":"none"}
+function vopen(l,i,nc){vw.list=l;vw.i=i;vw.nocap=!!nc;vshow();lb.classList.add("on");document.body.style.overflow="hidden"}
+function vclose(){lb.classList.remove("on");document.body.style.overflow=document.getElementById("ab").classList.contains("on")?"hidden":""}
+function vstep(d){vw.i=(vw.i+d+vw.list.length)%vw.list.length;vshow()}
+document.querySelectorAll(".shots img,.fresh img,.booths img").forEach(function(im){im.onclick=function(){var l=Array.prototype.slice.call(im.closest(".shots,.fresh,.booths").querySelectorAll("img"));vopen(l,l.indexOf(im),!!im.closest(".booths,.fresh"))}});
+var fl=Array.prototype.slice.call(document.querySelectorAll(".fresh img")),ci=Math.min(Math.max(ALBUM_COVER,0),Math.max(fl.length-1,0));
+if(fl.length){if(!document.getElementById("albumimg").getAttribute("src")){document.getElementById("albumimg").src=fl[ci].src}document.getElementById("albumn").textContent=fl.length+(fl.length>1?" PHOTOS":" PHOTO")}else{document.getElementById("album").style.display="none"}
+var alb=document.getElementById("album");
+var ab=document.getElementById("ab"),built=false;
+function aopen(){if(!built){var g=document.getElementById("abg");fl.forEach(function(im,i){var d=document.createElement("div");d.className="abt";var t=document.createElement("img");t.src=im.src;t.alt=im.alt;d.appendChild(t);d.onclick=function(){vopen(fl,i,true)};g.appendChild(d)});built=true}ab.classList.add("on");ab.scrollTop=0;document.body.style.overflow="hidden"}
+function aclose(){ab.classList.remove("on");document.body.style.overflow=""}
+document.getElementById("abx").onclick=aclose;
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&ab.classList.contains("on")&&!lb.classList.contains("on"))aclose()});
+alb.onclick=function(){if(fl.length)aopen()};
+alb.onkeydown=function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();alb.onclick()}};
+document.getElementById("lbx").onclick=vclose;
+document.getElementById("lbp").onclick=function(){vstep(-1)};
+document.getElementById("lbn").onclick=function(){vstep(1)};
+lb.onclick=function(e){if(e.target===lb)vclose()};
+document.addEventListener("keydown",function(e){if(!lb.classList.contains("on"))return;if(e.key==="Escape")vclose();if(e.key==="ArrowLeft")vstep(-1);if(e.key==="ArrowRight")vstep(1)});
+var tx=0;lb.addEventListener("touchstart",function(e){tx=e.changedTouches[0].clientX},{passive:true});
+lb.addEventListener("touchend",function(e){var d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50&&vw.list.length>1)vstep(d>0?-1:1)},{passive:true});
+document.getElementById("cp").onclick=function(){copyOrder(document.getElementById("cpm"),Object.keys(CART).length?"Copied with your items! Paste it into our Instagram DM or Viber and fill in your details.":"Copied! Paste it into our Instagram DM or Viber and fill it in.")};
+document.getElementById("ccp").onclick=function(){copyOrder(document.getElementById("ccm"),"Copied! Now open Instagram or Viber and paste it in the chat, then fill in your details.")};
+var cdate=document.getElementById("cdate");cdate.min=minDate();
+cdate.onchange=function(){var e=document.getElementById("cde");if(cdate.value&&cdate.value<cdate.min){e.textContent="Please choose a date at least 2 days from today.";cdate.value=""}else e.textContent=""};
+document.getElementById("cbar").onclick=function(){copen(true)};
+document.getElementById("cbar").onkeydown=function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();copen(true)}};
+document.getElementById("cx").onclick=function(){copen(false)};
+document.getElementById("cart").onclick=function(e){if(e.target.id==="cart")copen(false)};
+document.getElementById("cclr").onclick=function(){CART={};renderCart()};
+renderCart();
+</script>
+</body>
+</html>
